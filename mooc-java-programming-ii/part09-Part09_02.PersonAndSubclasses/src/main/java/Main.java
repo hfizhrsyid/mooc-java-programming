@@ -1,0 +1,32 @@
+import java.util.ArrayList;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // write your test code here
+        ArrayList<Person> persons = new ArrayList<Person>();
+        persons.add(new Teacher("Ada Lovelace", "24 Maddox St. London W1S 2QN", 1200));
+        persons.add(new Student("Ollie", "6381 Hollywood Blvd. Los Angeles 90028"));
+    
+        printPersons(persons);
+    }
+
+    public static void printPersons(ArrayList<Person> persons) {
+        for(Object i : persons) {
+            if (i instanceof Teacher) {
+                i = (Teacher) i;
+                System.out.println(i);
+                continue;
+            }
+
+            if (i instanceof Student) {
+                i = (Student) i;
+                System.out.println(i);
+                continue;
+            }
+
+            i = (Person) i;
+            System.out.println(i);
+        }
+    }
+}
